@@ -13,6 +13,7 @@
     "serve-storybook": "npx serve storybook-static"
   },
   "dependencies": {
+    "chromatic": "^13.1.5",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
   },
