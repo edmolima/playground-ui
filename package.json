@@ -4,18 +4,20 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "start": "vite",
+    "dev": "storybook dev -p 6006",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "serve-storybook": "npx serve storybook-static"
   },
   "dependencies": {
+    "@tailwindcss/vite": "^4.1.13",
     "chromatic": "^13.1.5",
     "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "react-dom": "^19.1.1",
+    "tailwindcss": "^4.1.13"
   },
   "devDependencies": {
     "@eslint/js": "^9.35.0",
