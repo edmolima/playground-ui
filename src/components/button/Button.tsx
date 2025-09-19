@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 export interface ButtonProps {
   /** Is this the principal call to action on the page? */
   primary?: boolean;
@@ -38,13 +40,33 @@ export const Button = ({
   const className = [baseClasses, variantClasses, sizeClasses[size]].join(" ");
 
   return (
-    <button
+    <motion.button
       type="button"
       className={className}
       style={backgroundColor ? { backgroundColor } : {}}
+      whileHover={{
+        scale: 1.05,
+        transition: { duration: 0.2, ease: "easeOut" },
+      }}
+      whileTap={{
+        scale: 0.95,
+        transition: { duration: 0.1, ease: "easeInOut" },
+      }}
+      whileFocus={{
+        scale: 1.02,
+        boxShadow: primary
+          ? "0 0 0 3px rgba(99, 102, 241, 0.3)"
+          : "0 0 0 3px rgba(0, 0, 0, 0.1)",
+      }}
+      initial={{ opacity: 0, y: 10 }}
+      animate={{
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.3, ease: "easeOut" },
+      }}
       {...props}
     >
       {label}
-    </button>
+    </motion.button>
   );
 };
