@@ -1,9 +1,6 @@
-import { Activity, useState, type JSX } from "react";
 
-type AccordionProps = {
-  title: string;
-  content: string;
-}
+import { Activity, useState, type JSX } from "react";
+import type { AccordionProps } from "./AccordionProps.types";
 
 export const Accordion = (props: AccordionProps): JSX.Element => {
   const { title, content } = props;
